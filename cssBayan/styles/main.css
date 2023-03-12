@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(247, 134, 48, 1) 0%, rgba(247, 237, 9, 1) 100%);
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 5vh 0;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5vw;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.box__label {
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+.container:hover .box__label {
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+}
+
+.heading {
+  margin-bottom: 4vh;
+  font-size: 3rem;
+  text-decoration: underline;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box__input {
+  display: none;
+}
+
+.box__input + .box__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.box__input + .box__label:hover {
+  color: darkgrey;
+}
+
+.box__input + .box__label:active {
+  opacity: 0.5;
+}
+
+.box__input:checked + .box__label {
+  text-decoration: underline;
+  color: whitesmoke;
+}
+
+.label__img-1 {
+  background: url("../assets/mem-1.jpg") center center no-repeat;
+  aspect-ratio: 234/197;
+}
+
+.label__img-2 {
+  background: url("../assets/mem-2.jpg") center center no-repeat;
+  aspect-ratio: 662/596;
+}
+
+.label__img-3 {
+  background: url("../assets/mem-3.jpg") center center no-repeat;
+  aspect-ratio: 574/431;
+}
+
+.label__img-4 {
+  background: url("../assets/mem-4.jpg") center center no-repeat;
+  aspect-ratio: 507/499;
+}
+
+.label__img-5 {
+  background: url("../assets/mem-5.jpg") center center no-repeat;
+  aspect-ratio: 996/1012;
+}
+
+.label__img {
+  margin: 2vh;
+  width: 100%;
+  height: 0;
+  border-radius: 0.5vw;
+  background-size: contain;
+}
+
+.box__input:checked + .box__label > .label__img,
+.box__label:hover > .label__img {
+  height: 45vh;
+}
+
+.label__heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading__btn {
+  width: 1rem;
+  aspect-ratio: 1/1;
+  background: url(../assets/plus.png) center center;
+  background-size: contain;
+}
+
+.box__input:checked + .box__label .heading__btn,
+.box__label:hover .heading__btn {
+  background: url(../assets/xmark.png) center center;
+  background-size: contain;
+}
